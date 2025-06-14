@@ -6,4 +6,7 @@ libxrender-dev
 python3-dev
 build-essential
 libatlas-base-dev
-gfortran 
+gfortran
+libopenblas-dev
+liblapack-dev
+libblas-dev 
