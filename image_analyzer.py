@@ -2,6 +2,7 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 import base64
+from io import BytesIO
 
 # .env 파일 로드
 load_dotenv()
@@ -10,9 +11,19 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def encode_image(image_path):
-    """이미지를 base64로 인코딩하는 함수"""
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode('utf-8')
+    """이미지를 base64로 인코딩하는 함수
+    
+    Args:
+        image_path (str or BytesIO): 분석할 이미지 파일의 경로 또는 BytesIO 객체
+        
+    Returns:
+        str: base64로 인코딩된 이미지 문자열
+    """
+    if isinstance(image_path, BytesIO):
+        return base64.b64encode(image_path.getvalue()).decode('utf-8')
+    else:
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode('utf-8')
 
 def analyze_image(image_path, prompt):
     """이미지를 분석하는 함수

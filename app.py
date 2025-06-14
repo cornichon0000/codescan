@@ -14,6 +14,7 @@ from datetime import datetime
 import time
 import json
 from hardcoding import *
+from io import BytesIO
 
 def image_analysis(file_path):
     target_stair = "피난층" if (st.session_state.selected_floor == "피난층" or st.session_state.selected_floor == "Niveau d'évacuation" or st.session_state.selected_floor == "Exit Level") else "지상층" if (st.session_state.selected_floor == "지상층" or st.session_state.selected_floor == "Étage" or st.session_state.selected_floor == "Ground") else "지하층"
@@ -115,7 +116,7 @@ CODE SCAN은 한국(건축법), 미국(NFPA 101), 프랑스(ERP 1)의 공개된 
 - 프랑스: www.legifrance.gouv.fr
 
 **6. 데이터 처리 및 보안 고지**  
-CODE SCAN은 사용자가 업로드한 도면 이미지 또는 PDF를 일시적으로 서버에 저장하여 분석을 수행합니다. 수집된 데이터는 자동 삭제되며, 개인 식별정보는 저장되지 않습니다. 서비스 품질 개선을 위해 분석 결과 일부를 익명화하여 내부 통계 목적으로 활용할 수 있습니다.
+CODE SCAN은 사용자가 업로드한 도면 jpg, png 등 이미지 파일을 일시적으로 서버에 저장하여 분석을 수행합니다. 수집된 데이터는 자동 삭제되며, 개인 식별정보는 저장되지 않습니다. 서비스 품질 개선을 위해 분석 결과 일부를 익명화하여 내부 통계 목적으로 활용할 수 있습니다.
 
 **7. 서비스 제공 조건 고지**  
 CODE SCAN은 무료로 제공되며, 서버 점검, 기술적 장애, 정책 변경 등의 이유로 일시적 서비스 중단이 발생할 수 있습니다. 회사는 사전 통보 없이 기능을 수정하거나 서비스 운영을 중단할 수 있습니다. 무료 서비스 특성상 일정 수준 이상의 품질, 연속성, 대응 서비스는 보장되지 않습니다.
@@ -148,7 +149,7 @@ Consultez les textes officiels sur :
 - France : www.legifrance.gouv.fr
 
 **6. Traitement des données et confidentialité**  
-CODE SCAN stocke temporairement les images ou PDF téléchargés pour analyse. Les données sont automatiquement supprimées et aucune information personnelle n'est conservée. Certaines données anonymisées peuvent être utilisées à des fins statistiques internes.
+CODE SCAN enregistre temporairement sur le serveur les fichiers image tels que jpg ou png téléchargés par l'utilisateur afin d'effectuer une analyse. Les données sont automatiquement supprimées et aucune information personnelle n'est conservée. Certaines données anonymisées peuvent être utilisées à des fins statistiques internes.
 
 **7. Conditions de service**  
 CODE SCAN est gratuit. Des interruptions temporaires peuvent survenir pour maintenance, problèmes techniques ou changements de politique. L'entreprise peut modifier ou interrompre le service sans préavis. La qualité, la continuité et le support ne sont pas garantis.
@@ -181,7 +182,7 @@ Official documents can be found at:
 - France: www.legifrance.gouv.fr
 
 **6. Data Usage & Privacy**  
-CODE SCAN temporarily stores uploaded drawing images or PDFs for analysis. Collected data is automatically deleted, and no personal information is stored. Some anonymized results may be used for internal statistics to improve service quality.
+CODE SCAN temporarily stores image files such as JPG or PNG uploaded by users on the server to perform analysis. Collected data is automatically deleted, and no personal information is stored. Some anonymized results may be used for internal statistics to improve service quality.
 
 **7. Service Scope & Stability**  
 CODE SCAN is provided free of charge. Temporary service interruptions may occur due to maintenance, technical issues, or policy changes. The company may modify or discontinue the service without notice. No guarantee is provided for quality, continuity, or support.
@@ -312,22 +313,16 @@ else:
     st.markdown(f'<div class="law-title-subheader">Image Upload</div>', unsafe_allow_html=True)
 
     # 이미지 업로더 위젯 (PDF 지원 추가)
-    uploaded_file = st.file_uploader("", type=['png', 'jpg', 'jpeg', 'pdf'])
+    uploaded_file = st.file_uploader("", type=['png', 'jpg', 'jpeg'])
 
     if uploaded_file is not None:
         # 파일 확장자 확인
         file_extension = uploaded_file.name.split('.')[-1].lower()
         
-        # 현재 시간을 파일명에 추가하여 고유한 파일명 생성
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"{timestamp}_{uploaded_file.name}"
-        file_path = os.path.join("uploaded_files", filename)
+        # BytesIO 객체에 파일 내용 저장
+        file_content = BytesIO(uploaded_file.getbuffer())
         
-        # 파일 저장
-        with open(file_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-        
-        st.success(f"File saved successfully as: {filename}")
+        st.success(f"File uploaded successfully: {uploaded_file.name}")
         
         # 이미지 컨테이너 스타일 정의
         st.markdown("""
@@ -352,7 +347,7 @@ else:
         
         if file_extension in ['png', 'jpg', 'jpeg']:
             # 이미지 파일 처리
-            image = Image.open(uploaded_file)
+            image = Image.open(file_content)
             
             # PIL Image를 OpenCV 형식으로 변환
             cv_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
@@ -381,48 +376,8 @@ else:
                 st.write(f"Image size: {image.size}")
                 st.write(f"Image mode: {image.mode}")
 
-            image_analysis(file_path)
-                
-        elif file_extension == 'pdf':
-            # PDF 파일 처리
-            pdf_bytes = uploaded_file.read()
-            
-            # PDF를 이미지로 변환 (첫 페이지만)
-            pdf_images = convert_from_bytes(pdf_bytes, first_page=1, last_page=1)
-            if pdf_images:
-                # 첫 페이지 이미지 가져오기
-                pdf_image = pdf_images[0]
-                
-                # PIL Image를 OpenCV 형식으로 변환
-                cv_image = cv2.cvtColor(np.array(pdf_image), cv2.COLOR_RGB2BGR)
-                
-                # 흑백 변환
-                gray_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-                
-                # OpenCV 이미지를 PIL Image로 다시 변환
-                gray_pil_image = Image.fromarray(gray_image)
-                
-                # PDF 미리보기와 파일명을 포함하는 컨테이너
-                st.markdown('<div class="image-container">', unsafe_allow_html=True)
-                st.image(gray_pil_image, use_column_width=True)
-                st.markdown(f'<div class="filename">{uploaded_file.name}</div>', unsafe_allow_html=True)
-                st.markdown('</div>', unsafe_allow_html=True)
-                
-                # PDF 정보 표시
-                st.subheader("PDF Information")
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    st.write(f"Filename: {uploaded_file.name}")
-                    st.write(f"File size: {uploaded_file.size / 1024:.2f} KB")
-                
-                with col2:
-                    # PDF 페이지 수 확인
-                    pdf_document = fitz.open(stream=pdf_bytes, filetype="pdf")
-                    st.write(f"Total pages: {len(pdf_document)}")
-                    st.write(f"Page size: {pdf_document[0].rect}")
-                
-                image_analysis(file_path)
+            # BytesIO 객체를 파일 경로처럼 사용
+            image_analysis(file_content)
 
     # 하단 고지문 다국어 텍스트 정의
     footer_texts = MULTY_LANGUAGE
