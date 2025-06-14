@@ -1,0 +1,122 @@
+{
+    "최대 피난거리": {
+      "Exit Level": "45 m (150 ft) (비스프링클러) / 76 m (250 ft) (스프링클러)", 
+      "Above Exit Level": "45 m (150 ft) / 76 m (250 ft)", 
+      "Below Exit Level": "45 m (150 ft) / 76 m (250 ft)",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "36.2.6 – 스프링클러 미설치 시 최대 피난거리 150 ft, 스프링클러 설치 건물은 250 ft까지 허용",
+          "url": ":contentReference[oaicite:0]{index=0}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "Table 1017.2 – Mercantile (Group M) 기준 최대 피난거리: 비스프링클러 200 ft, 스프링클러설비 시 250 ft",
+          "url": ":contentReference[oaicite:1]{index=1}"
+        }
+      ]
+    },
+    "피난 통로 유효폭": {
+      "Exit Level": "점유인원 50인 미만: 최소 915 mm (36 in); 50인 이상: 최소 1,120 mm (44 in)",
+      "Above Exit Level": "동일",
+      "Below Exit Level": "동일",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "7.3.3.1 – 총 피난 통로 폭은 수용인원에 비례하며, 최소 36 in 이상 (신축 건물의 일반 기준)",
+          "url": ":contentReference[oaicite:2]{index=2}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "1020.3 – 복도 최소폭 44 in (1118 mm), 단 점유인원 50 미만 시 36 in 허용",
+          "url": ":contentReference[oaicite:3]{index=3}"
+        }
+      ]
+    },
+    "피난계단 최소 유효폭": {
+      "Exit Level": "점유인원 50인 미만: 최소 915 mm (36 in); 50인 이상: 최소 1,120 mm (44 in)",
+      "Above Exit Level": "동일",
+      "Below Exit Level": "동일",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "7.2.2.2.1 – 계단 통행폭 36 in 이상 (경우에 따라 점유인원 50 넘을 시 폭 확장 요구)",
+          "url": ":contentReference[oaicite:4]{index=4}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "1011.2 – 피난계단 폭 기본 44 in; 단, 50인 미만이 사용하는 계단은 36 in까지 허용",
+          "url": ":contentReference[oaicite:5]{index=5}"
+        }
+      ]
+    },
+    "최소 피난출구 개수": {
+      "Exit Level": "2 (일반적으로 2개 이상의 출구 필요; 소규모 매장 등 일부 조건에서 1개 출구 예외 허용)",
+      "Above Exit Level": "2",
+      "Below Exit Level": "2",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "36.2.4.1 – 매 층 당 최소 2개의 피난출구 요구 (일부 Class C 소형 판매시설은 1개 출구 예외 가능:contentReference[oaicite:6]{index=6})",
+          "url": ":contentReference[oaicite:7]{index=7}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "1006.2 – 출구 수는 수용인원에 따라 결정: 1개 출구는 49인까지 허용; 50–500인은 2개, 501–1000인은 3개, 1000인 초과는 4개",
+          "url": ":contentReference[oaicite:8]{index=8}"
+        }
+      ]
+    },
+    "외부출구 유효너비 합계": {
+      "Exit Level": "계산식: 계단 7.6 mm/인 (0.3 in/인당), 기타 출구경로 5.1 mm/인 (0.2 in/인당) 필요. *스프링클러 완비 시 계단 5.1 mm/인 (0.2 in/인), 기타 3.8 mm/인 (0.15 in/인)으로 완화 가능",
+      "Above Exit Level": "동일",
+      "Below Exit Level": "동일",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "7.3.3.1 – 출구 용량 산정 기준: 문 등 수평통로 0.2 in/인, 계단 0.3 in/인 (점유인원乘하여 총 필요 유효폭 산정)",
+          "url": ":contentReference[oaicite:9]{index=9}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "1005.3 – 수직 피난로 0.3 인치·수평 피난로 0.2 인치/인원당 (스프링클러 건물은 0.2, 0.15 인치로 완화) 기준으로 총 출구 폭 계산",
+          "url": ":contentReference[oaicite:10]{index=10}"
+        }
+      ]
+    },
+    "계단실 방화 보호": {
+      "Exit Level": "계단실 내부출구는 3층 이하 건물에서는 1시간 방화구획, 4층 이상 연결 시 2시간 방화구획 적용", 
+      "Above Exit Level": "동일", 
+      "Below Exit Level": "동일",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "8.6.5 및 36.3.1 – 다층 건물의 내부 계단실은 건물 층수에 따라 1시간 또는 2시간 방화구획 설치 (소규모 2층 매장의 개방계단은 예외 허용)",
+          "url": ":contentReference[oaicite:11]{index=11}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "1023.2 – 4개 이상의 층을 연결하는 계단실은 2시간 방화격벽으로 보호, 3개 이하 층 연결 시 1시간으로 가능 (지하층 포함 층수 기준)",
+          "url": ":contentReference[oaicite:12]{index=12}"
+        }
+      ]
+    },
+    "막다른 통로 제한": {
+      "Exit Level": "비스프링클러 건물: 최대 6 m (20 ft); 스프링클러 설치 시: 최대 15 m (50 ft)",
+      "Above Exit Level": "동일",
+      "Below Exit Level": "동일",
+      "references": [
+        {
+          "law_name": "NFPA 101",
+          "clause_summary": "36.2.5.2 – 막다른 복도 길이 제한: 스프링클러 미보호 시 20 ft, 스프링클러 보호 시 50 ft까지 허용",
+          "url": ":contentReference[oaicite:13]{index=13}"
+        },
+        {
+          "law_name": "IBC 2021",
+          "clause_summary": "1020.5 – 두 개 이상의 출구가 필요한 경우 막다른 복도 20 ft 초과 금지 (NFPA13 스프링클러 설치 건물은 50 ft까지 완화 허용)",
+          "url": ":contentReference[oaicite:14]{index=14}:contentReference[oaicite:15]{index=15}"
+        }
+      ]
+    }
+  }
+  

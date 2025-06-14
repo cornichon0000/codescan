@@ -1,0 +1,188 @@
+{
+    "지하층": {
+      "corridor_clear_width": {
+        "value": "≥ 1.5m",
+        "note": "해당 층 거실 바닥면적 합계 200㎡ 이상 시 적용",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제48조 제1항 – 연면적 200㎡ 초과 건축물 복도 폭 기준 적용",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          },
+          {
+            "law_name": "건축물의 피난ㆍ방화구조 등의 기준에 관한 규칙",
+            "clause_summary": "제15조의2 제1항 – 복도 유효너비: 양측 1.5m(의료시설 1.8m) / 편측 1.2m (≥200㎡ 기준)",
+            "url": "https://www.law.go.kr/법령/건축물의피난ㆍ방화구조등의기준에관한규칙"
+          }
+        ]
+      },
+      "evacuation_distance_one_direction": {
+        "value": "≤ 30m",
+        "note": "거실 어느 지점에서도 직통계단까지 30미터 이내 거리 확보",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제34조 제1항 – 피난거리 30m 제한 (내화구조 건축물 등은 50m 이내)",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      },
+      "direct_stairs_min_count": {
+        "value": "≥ 2개 (조건부)",
+        "note": "바닥면적 200㎡ 미만이면 1개로 가능, 200㎡ 이상이면 2개 이상 설치",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제34조 제2항제5호 – 지하층(바닥면적 200㎡ 이상) 직통계단 2개소 설치",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      },
+      "special_fire_stair_required": {
+        "value": true,
+        "note": "지하 판매층에서는 직통계단 중 1개 이상 특별피난계단으로 설치",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제35조 제3항 – 판매층 직통계단 1개 이상 특별피난계단 설치",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      }
+    },
+  
+    "1층": {
+      "corridor_clear_width": {
+        "value": "≥ 1.5m",
+        "note": "해당 층 바닥면적 합계 200㎡ 이상 시 적용",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제48조 제1항 – 연면적 200㎡ 초과 건축물 복도 폭 기준 적용",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          },
+          {
+            "law_name": "건축물의 피난ㆍ방화구조 등의 기준에 관한 규칙",
+            "clause_summary": "제15조의2 제1항 – 복도 유효너비 기준 (양측 1.5m / 편측 1.2m)",
+            "url": "https://www.law.go.kr/법령/건축물의피난ㆍ방화구조등의기준에관한규칙"
+          }
+        ]
+      },
+      "exit_width_total": {
+        "value": "≥ 0.6m/100㎡",
+        "note": "판매시설의 피난층에 설치되는 외부 출입구 총 폭 기준",
+        "references": [
+          {
+            "law_name": "건축물의 피난ㆍ방화구조 등의 기준에 관한 규칙",
+            "clause_summary": "제11조 제4항 – 판매시설 피난층 외부출구 유효폭 100㎡당 0.6m 이상",
+            "url": "https://www.law.go.kr/법령/건축물의피난ㆍ방화구조등의기준에관한규칙"
+          }
+        ]
+      }
+    },
+  
+    "2-3층": {
+      "corridor_clear_width": {
+        "value": "≥ 1.5m", 
+        "note": "층별 거실 면적 합계 200㎡ 이상이면 복도 폭 1.5m 이상 (편복도 1.2m 이상)",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제48조 제1항 – 연면적 200㎡ 초과 건축물 복도 폭 기준 적용",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          },
+          {
+            "law_name": "건축물의 피난ㆍ방화구조 등의 기준에 관한 규칙",
+            "clause_summary": "제15조의2 제1항 – 복도 유효너비: 양측 1.5m / 편측 1.2m (200㎡ 초과시)",
+            "url": "https://www.law.go.kr/법령/건축물의피난ㆍ방화구조등의기준에관한규칙"
+          }
+        ]
+      },
+      "evacuation_distance_one_direction": {
+        "value": "≤ 30m", 
+        "note": "거실의 어느 부분도 직통계단까지 30m를 초과하지 않도록 계획 (내화구조 건축물은 ≤50m 허용)",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제34조 제1항 – 거실 각 부분에서 직통계단까지 30m 이내 (원칙)",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      },
+      "direct_stairs_min_count": {
+        "value": "1개 또는 2개",
+        "note": "※ 3층에 위치한 판매층의 바닥면적 합계가 200㎡ 이상인 경우 직통계단 2개소 필요 (그 미만이면 1개소 가능)",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제34조 제2항제2호 – 3층 이상 판매시설(200㎡↑) 직통계단 2개소 설치",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      },
+      "special_fire_stair_required": {
+        "value": true,
+        "note": "상기 층이 판매시설 용도인 경우 직통계단 1개 이상은 특별피난계단이어야 함",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제35조 제3항 – 판매시설 용도 층 직통계단의 1개 이상 특별피난계단으로 설치",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      }
+    },
+  
+    "4층 이상": {
+      "corridor_clear_width": {
+        "value": "≥ 1.5m",
+        "note": "해당 층 200㎡ 이상 시 복도 최소 폭 1.5m (편복도 1.2m) 준수",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제48조 제1항 – 연면적 200㎡ 초과 건축물 복도 폭 기준 적용",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          },
+          {
+            "law_name": "건축물의 피난ㆍ방화구조 등의 기준에 관한 규칙",
+            "clause_summary": "제15조의2 제1항 – 복도 유효너비 기준 (양측 1.5m / 편측 1.2m, 200㎡ 초과)",
+            "url": "https://www.law.go.kr/법령/건축물의피난ㆍ방화구조등의기준에관한규칙"
+          }
+        ]
+      },
+      "evacuation_distance_one_direction": {
+        "value": "≤ 30m",
+        "note": "직통계단까지의 최대 보행거리 30m (일반 건축물 기준)",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제34조 제1항 – 피난층 외의 층 보행거리 30m 이하 규정",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      },
+      "direct_stairs_min_count": {
+        "value": "≥ 2개", 
+        "note": "판매시설이 3층 이상에 위치하고 층별 200㎡를 초과하는 경우 법적으로 2개 이상의 피난계단 필요",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제34조 제2항제2호 – 3층 이상 판매시설(200㎡↑) 직통계단 2개소 설치",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      },
+      "special_fire_stair_required": {
+        "value": true,
+        "note": "해당 층이 판매시설 용도인 경우 특별피난계단 1개소 이상 확보",
+        "references": [
+          {
+            "law_name": "건축법 시행령",
+            "clause_summary": "제35조 제3항 – 판매층 직통계단 1개 이상 특별피난계단 설치 의무",
+            "url": "https://www.law.go.kr/법령/건축법시행령"
+          }
+        ]
+      }
+    }
+  }
+  

@@ -1,0 +1,103 @@
+{
+    "최대 피난거리": {
+      "피난층": "50m (복수 경로 존재 시), 30m (단일 경로 시)",
+      "지상층": "40m (복수 경로 존재 시), 30m (단일 경로 시)",
+      "지하층": "40m (복수 경로 존재 시), 30m (단일 경로 시)",
+      "references": [
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "M 11 §1(a) – 지상층 피난거리: 50m (여러 경로 선택 가능 시), 30m (단일 경로 시):contentReference[oaicite:0]{index=0}",
+          "url": "https://sitesecurite.com/contenu/_erp/erpm/m08a14.php"
+        },
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "M 11 §1(b) – 상층 및 지하층 피난거리: 40m (여러 경로 선택 가능 시), 30m (단일 경로 시):contentReference[oaicite:1]{index=1}",
+          "url": "https://sitesecurite.com/contenu/_erp/erpm/m08a14.php"
+        }
+      ]
+    },
+  
+    "피난 통로 유효폭": {
+      "피난층": "주요 통로 4 UP(약 2.4m), 보조 통로 3 UP(약 1.8m)",
+      "지상층": "주요 통로 4 UP(약 2.4m), 보조 통로 3 UP(약 1.8m)",
+      "지하층": "주요 통로 4 UP(약 2.4m), 보조 통로 3 UP(약 1.8m)",
+      "references": [
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "M 10 §1 – 주요 피난통로 4개, 보조 통로 3개 피난단위 폭 (수용인원 701명 이상 기준):contentReference[oaicite:2]{index=2}",
+          "url": "https://sitesecurite.com/contenu/_erp/erpm/m08a14.php"
+        }
+      ]
+    },
+  
+    "피난계단 최소 유효폭": {
+      "피난층": "최소 2 UP (약 1.4m)",
+      "지상층": "최소 2 UP (약 1.4m)",
+      "지하층": "최소 2 UP (약 1.4m)",
+      "references": [
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "CO 36 §3 – 수용인원 200명 초과 시 모든 피난 계단 및 출구는 최소 2 UP 폭 확보:contentReference[oaicite:3]{index=3}",
+          "url": "https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000290033/LEGISCTA000020303939/"
+        }
+      ]
+    },
+  
+    "최소 피난출구 개수": {
+      "피난층": "최소 2개 (701명 규모 시 계산상 3개 필요)",
+      "지상층": "최소 2개 (701명 규모 시 계산상 3개 필요)",
+      "지하층": "최소 2개 (701명 규모 시 계산상 3개 필요)",
+      "references": [
+        {
+          "law_name": "Code de la Construction et de l’Habitation",
+          "clause_summary": "R. 123-7 – 모든 ERP 건물은 최소 2개의 출구를 가져야 함:contentReference[oaicite:4]{index=4}",
+          "url": "https://culturegrandest.fr/les-essentiels/guide-de-la-securite/laccueil-du-public/levacuation-du-public"
+        },
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "M 11 §2 – 수용인원 700명 초과 매장의 경우 산출된 출구 수 및 너비의 2/3 이상 확보해야 함:contentReference[oaicite:5]{index=5}",
+          "url": "https://sitesecurite.com/contenu/_erp/erpm/m08a14.php"
+        }
+      ]
+    },
+  
+    "외부출구 유효너비 합계": {
+      "피난층": "수용인원 100명당 0.6m (1 UP) 이상",
+      "지상층": "수용인원 100명당 0.6m (1 UP) 이상",
+      "지하층": "수용인원 100명당 0.6m (1 UP) 이상",
+      "references": [
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "CO 38 §1 – 피난출구 총너비 산정: 수용인원 100명당 1 UP (0.6m) (※ 500명 이하 시 산출 후 +1 UP 추가):contentReference[oaicite:6]{index=6}",
+          "url": "https://culturegrandest.fr/les-essentiels/guide-de-la-securite/laccueil-du-public/levacuation-du-public"
+        }
+      ]
+    },
+  
+    "계단실 방화 보호": {
+      "피난층": "건물 2개 층 이하인 경우 계단 비보호 허용",
+      "지상층": "건물 3개 층 이상인 경우 상층부 계단은 방화 계단실로 보호",
+      "지하층": "별도 규정 없음 (상층부 기준과 동일 적용)",
+      "references": [
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "M 12 §1-2 – 지상 1개 층 건물은 계단실 불필요; 지상 3개 층 이상 건물은 3층 초과 계단 전부 방화구획 필요:contentReference[oaicite:7]{index=7}",
+          "url": "https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000290033/LEGISCTA000020334825/"
+        }
+      ]
+    },
+  
+    "막다른 통로 제한": {
+      "피난층": "피난 통로 막다른 부분 형성 불가",
+      "지상층": "피난 통로 막다른 부분 형성 불가",
+      "지하층": "피난 통로 막다른 부분 형성 불가",
+      "references": [
+        {
+          "law_name": "Arrêté du 25 juin 1980",
+          "clause_summary": "M 13 – 보조 통로는 막다른 통로(Dead-end)를 형성해서는 안 됨:contentReference[oaicite:8]{index=8}",
+          "url": "https://sitesecurite.com/contenu/_erp/erpm/m08a14.php"
+        }
+      ]
+    }
+  }
+  
