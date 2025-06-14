@@ -38,7 +38,7 @@ networkx==3.5
 nibabel==5.3.2
 nipype==1.10.0
 openai==1.86.0
-numpy==1.23.5
+numpy==1.23.4
 opencv-python-headless==4.8.0.74
 packaging==24.2
 pandas==2.3.0
